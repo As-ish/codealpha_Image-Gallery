@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Wall — A Photography Exhibit</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="grain"></div>
+
+  <header class="site-head">
+    <div class="site-head__inner">
+      <h1 class="site-head__title">The&nbsp;Wall</h1>
+      <p class="site-head__sub">A small exhibit of frames worth stopping for</p>
+    </div>
+    <div class="site-head__count" id="resultCount">24 works</div>
+  </header>
+
+  <nav class="filters" id="filters" aria-label="Filter gallery by category">
+    <button class="filters__btn is-active" data-filter="all">All</button>
+    <button class="filters__btn" data-filter="nature">Nature</button>
+    <button class="filters__btn" data-filter="architecture">Architecture</button>
+    <button class="filters__btn" data-filter="people">People</button>
+    <button class="filters__btn" data-filter="travel">Travel</button>
+    <button class="filters__btn" data-filter="animals">Animals</button>
+    <span class="filters__slider" id="filterSlider" aria-hidden="true"></span>
+  </nav>
+
+  <main class="gallery" id="gallery" aria-live="polite">
+    <!-- Cards injected by js/script.js -->
+  </main>
+
+  <p class="empty-state" id="emptyState" hidden>No frames hang in this category yet.</p>
+
+  <footer class="site-foot">
+    <p>Hung and lit for the web — click any frame to view it full size.</p>
+  </footer>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Image viewer">
+    <button class="lightbox__close" id="lbClose" aria-label="Close viewer">&times;</button>
+
+    <button class="lightbox__nav lightbox__nav--prev" id="lbPrev" aria-label="Previous image">
+      <svg viewBox="0 0 24 24"><path d="M15 4l-8 8 8 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+
+    <figure class="lightbox__frame">
+      <div class="lightbox__imgwrap">
+        <img id="lbImage" src="" alt="">
+      </div>
+      <figcaption class="lightbox__caption">
+        <span class="lightbox__title" id="lbTitle"></span>
+        <span class="lightbox__meta">
+          <span class="lightbox__category" id="lbCategory"></span>
+          <span class="lightbox__index" id="lbIndex"></span>
+        </span>
+      </figcaption>
+    </figure>
+
+    <button class="lightbox__nav lightbox__nav--next" id="lbNext" aria-label="Next image">
+      <svg viewBox="0 0 24 24"><path d="M9 4l8 8-8 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
